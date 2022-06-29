@@ -5,16 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bank.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PaymentController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
-    private readonly ILogger<PaymentController> _logger;
 
-    public PaymentController(IPaymentService paymentService, ILogger<PaymentController> logger)
+    public PaymentController(IPaymentService paymentService)
     {
         _paymentService = paymentService;
-        _logger = logger;
     }
 
     [HttpPost]
