@@ -9,8 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IPaymentService, TestPaymentService>();
-//builder.Services.AddScoped<IPaymentService, FailingPaymentService>();
+//builder.Services.AddScoped<IPaymentService, TestPaymentService>();
+builder.Services.AddScoped<IPaymentService, FailingPaymentService>();
 
 var app = builder.Build();
 

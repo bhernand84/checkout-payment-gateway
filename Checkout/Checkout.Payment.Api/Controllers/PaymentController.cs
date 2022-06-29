@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Checkout.Payment.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PaymentController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
@@ -16,10 +16,22 @@ public class PaymentController : ControllerBase
         _paymentService = paymentService;
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetPayment(int id)
+    {
+        var result = await _paymentService.GetPayment(id);
+        return Ok(result);
+    }
+
     [HttpPost]
-    public async Task<PaymentResponse> ProcessPayment(ProcessPaymentRequest paymentRequest)
+    public async Task<IActionResult> ProcessPayment(ProcessPaymentRequest paymentRequest)
     {
         var result = await _paymentService.ProcessPayment(paymentRequest);
-        return result;
+        if (result.PaymentStatus == Models.Enum.PaymentStatusEnum.Success)
+        {
+            var id = await _paymentService.PersistPayment(result);
+            return Ok(id);
+        }
+        return StatusCode((int)System.Net.HttpStatusCode.InternalServerError);
     }
 }

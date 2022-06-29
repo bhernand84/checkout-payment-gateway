@@ -1,5 +1,8 @@
-﻿using Checkout.Payment.Api.Services;
+﻿using Checkout.Payment.Api.Data;
+using Checkout.Payment.Api.Data.Models;
+using Checkout.Payment.Api.Services;
 using Checkout.Payment.Api.Settings;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<PaymentContext>(options => options.UseInMemoryDatabase(databaseName: "checkoutPayment"));
 builder.Services.AddScoped<IPaymentService, BankPaymentService>();
 builder.Services.AddScoped<IBankSettings, BankSettings>();
+builder.Services.AddScoped<IPaymentDataService, PaymentDataService>();
+
 
 var app = builder.Build();
 

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bank.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PaymentController : ControllerBase
 {
     private readonly IPaymentService _paymentService;

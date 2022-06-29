@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="RestSharp" Version="108.0.1" />
   </ItemGroup>
@@ -19,6 +20,9 @@
     <None Remove="Models\Enum\" />
     <None Remove="RestSharp" />
     <None Remove="Settings\" />
+    <None Remove="Data\" />
+    <None Remove="Data\Models\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -27,5 +31,8 @@
     <Folder Include="Models\" />
     <Folder Include="Models\Enum\" />
     <Folder Include="Settings\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 
         public BankSettings()
         {
-            ApiUrl = "http://localhost:5142";
+            ApiUrl = "http://localhost:5142/api";
             ProcessPaymentEndpoint = "payment";
         }
     }
