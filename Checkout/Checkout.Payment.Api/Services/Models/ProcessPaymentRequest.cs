@@ -1,5 +1,4 @@
-﻿using System;
-namespace Bank.Api.Models
+﻿namespace Checkout.Payment.Api.Services.Models
 {
     public class ProcessPaymentRequest
     {
@@ -18,4 +17,3 @@ namespace Bank.Api.Models
         }
     }
 }
-

@@ -1,8 +1,9 @@
-﻿using Bank.Api.Models;
-using Bank.Api.Services;
+﻿using Checkout.Payment.Api.Models;
+using Checkout.Payment.Api.Services;
+using Checkout.Payment.Api.Services.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bank.Api.Controllers;
+namespace Checkout.Payment.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -16,10 +17,9 @@ public class PaymentController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ProcessPaymentResponse> ProcessPayment(ProcessPaymentRequest paymentRequest)
+    public async Task<PaymentResponse> ProcessPayment(ProcessPaymentRequest paymentRequest)
     {
         var result = await _paymentService.ProcessPayment(paymentRequest);
         return result;
     }
 }
-

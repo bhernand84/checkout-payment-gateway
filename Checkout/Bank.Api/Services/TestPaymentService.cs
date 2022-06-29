@@ -1,5 +1,4 @@
-﻿using System;
-using Bank.Api.Models;
+﻿using Bank.Api.Models;
 
 namespace Bank.Api.Services
 {

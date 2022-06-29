@@ -1,4 +1,5 @@
-﻿using Bank.Api.Services;
+﻿using Checkout.Payment.Api.Services;
+using Checkout.Payment.Api.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IPaymentService, TestPaymentService>();
-//builder.Services.AddScoped<IPaymentService, FailingPaymentService>();
+builder.Services.AddScoped<IPaymentService, BankPaymentService>();
+builder.Services.AddScoped<IBankSettings, BankSettings>();
 
 var app = builder.Build();
 
