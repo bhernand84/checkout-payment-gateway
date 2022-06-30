@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "b855c562-6f6c-4591-bfae-61a476bbebcd",
+		"name": "checkout.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bank Api - Payment POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"CardNumber\": \"1212132132131\",\n  \"ExpirationDate\": \"2022-06-28T21:49:43.008Z\",\n  \"Amount\": 10,\n  \"Currency\": \"en-US\",\n  \"Cvv\": \"122\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5142/api/Payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5142",
+					"path": [
+						"api",
+						"Payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment API - Payment POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cardNumber\": \"5465846555555586\",\n  \"expirationDate\": \"2025-10-01T00:00:00.000Z\",\n  \"amount\": 10,\n  \"currency\": \"en-US\",\n  \"cvv\": \"122\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5209/api/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5209",
+					"path": [
+						"api",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment API - Payment GET",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5209/api/payment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5209",
+					"path": [
+						"api",
+						"payment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
