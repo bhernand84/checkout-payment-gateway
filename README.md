@@ -60,7 +60,7 @@ These dependencies are injected in Bank.Api.Program.cs, so we will be easily abl
 
 ## Assumptions made
 - We will not be storing cvv in the datastore
-- * is used to mask credit card number
+- '*' is used to mask credit card number
 - Expiration date can be stored as full date, in lieu of MMYYYY
 - Amount is stored as decimal
 
