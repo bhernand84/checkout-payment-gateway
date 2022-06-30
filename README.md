@@ -72,4 +72,5 @@ These dependencies are injected in Bank.Api.Program.cs, so we will be easily abl
 - More robust error handling and logging across the board, but specifically in the service layer when calls to the BankApi are made
 - Introduce Authentication/Authorization for both APIs
 - Input validation - currently we are assuming happy path
+- Improve build process; currently it requires manual configuration to get both projects running.
 
