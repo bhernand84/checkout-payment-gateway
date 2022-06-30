@@ -2,7 +2,7 @@
 
 ## Bank API
 
-Used to absttract the behavior of the Bank API, specifically for processing payments. 
+Used to abstract the behavior of the Bank API, specifically for processing payments. 
 
 ### URI: http://localhost:5142/api/payment [POST]
 
@@ -39,7 +39,7 @@ Retrieve information about a payment, given  an {id} - type int
 Currently, the project is using an in-memory data store with EF. Data pushed to this store will not persist across application lifecycles.git commit
 
 ## Run instructions:
-1. Pull the project from [github repo]
+1. Pull the project from github
 2. Open the Checkout.sln solution in Visual Studio
 3. Right click the solution name, select Set Startup Projects
 4. Give the configuration a name (the default is fine)
